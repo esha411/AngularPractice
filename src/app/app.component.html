@@ -1,18 +1,18 @@
     <label>Name: </label>
-    <input [(ngModel)]="name" />
-    <p>Welcome, {{ name }}!</p>
+    <input [formControl]="name" />
+    <p>Welcome, {{ name.value }}!</p>
 
     <label>Email: </label>
-    <input [(ngModel)]="email" />
-    <p>Your Email: {{email}} </p>
+    <input [formControl]="email" />
+    <p>Your Email: {{email.value}} </p>
 
     <label>Date of Birth: </label>
-    <input [(ngModel)]="dateofbirth" />
-    <p>Your Date of Birth: {{dateofbirth}}</p>
+    <input [formControl]="dateofbirth" />
+    <p>Your Date of Birth: {{dateofbirth.value}}</p>
 
 
-<button (click)="onReset()" [disabled]="!email && !dateofbirth && !name"> Reset</button>
+<button (click)="onReset()" [disabled]="!email.value && !dateofbirth.value && !name.value"> Reset</button>
 
-<button (click)="onSave()" [disabled]="!email && !dateofbirth && !name">Save</button>
+<button (click)="onSave()" [disabled]="!email.value && !dateofbirth.value && !name.value">Save</button>
 
 <p>Save button clicked {{count}} times.</p>

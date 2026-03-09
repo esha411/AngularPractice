@@ -8,21 +8,21 @@ import { FormControl } from '@angular/forms';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  name = '';
-  email = '';
-  dateofbirth = '';
+  name = new FormControl('');
+  email = new FormControl('');
+  dateofbirth = new FormControl('');
   count = 0;
 
   onReset(){
-    this.name = '';
-    this.email = '';
-    this.dateofbirth = '';
+    this.name.reset();
+    this.email.reset();
+    this.dateofbirth.reset();
   }
 
   onSave(){
-    console.log(this.name);
-    console.log(this.email);
-    console.log(this.dateofbirth)
+    console.log(this.name.value);
+    console.log(this.email.value);
+    console.log(this.dateofbirth.value)
     this.count++;
   }
 

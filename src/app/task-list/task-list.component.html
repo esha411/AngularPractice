@@ -1,0 +1,35 @@
+<div *ngIf="TASKS.length === 0">
+  No tasks available
+</div>
+
+<div *ngFor="let task of TASKS">
+    <h3 [ngStyle]="{'text-decoration': task.dueDate < today ? 'line-through' : 'none'}">
+    {{task.title}}
+    </h3>
+
+    <p appColorChange [ngStyle]="{'text-decoration': task.dueDate < today ? 'line-through' : 'none'}">
+    {{task.description}}
+    </p>
+
+    <p>Due Date: {{task.dueDate}}</p>
+    
+    <select [(ngModel)]="task.status">
+        <option>Incomplete</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+    </select>
+</div>
+
+<input type="text" placeholder="Title" [(ngModel)]="newTitle">
+
+<input type="text" placeholder="Description" [(ngModel)]="newDescription">
+
+<input type="date" [(ngModel)]="newDueDate">
+
+<select [(ngModel)]="newStatus">
+    <option>Incomplete</option>
+    <option>In Progress</option>
+    <option>Completed</option>
+</select>
+
+<button (click)="addTask()">Add Task</button>

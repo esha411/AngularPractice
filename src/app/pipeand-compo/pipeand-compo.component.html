@@ -1,0 +1,14 @@
+<div class="split-container">
+    <div class="left-pane" >
+        <h2 class="title">List</h2> 
+        <div class="card-item" *ngFor = "let d of data; let i = index" [style.border-left-color]="d.color" (click)="showDescription(d.name, d.description, i)"  [ngClass]="{'active-bg': activeIndex === i}">
+            <p [ngStyle]="{ 'color' : activeIndex == i && isTitleChange ? d.color : 'black', 'font-size': activeIndex == i && isTitleChange ? '22px' : '16px' }"> {{d.name}} </p>
+            <p>
+             {{d.description | truncateText}}
+            </p>
+        </div>
+    </div>
+    <div class="right-pane">
+    <app-child [childName]="selectedName" [childDataSource]="msg" [cardData]="selectedCard" (titleChangeEvent)="nameTitleTrigger()" > </app-child>
+    </div>
+</div>

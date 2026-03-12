@@ -1,0 +1,42 @@
+.split-container {
+  display: flex;
+}
+
+.left-pane {
+  flex: 1;
+  background-color: #ffffff;
+  border: solid gray;
+}
+
+.card-item {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 10px solid;
+  padding: 20px;
+  margin: 0px;
+}
+
+.right-pane {
+  flex: 1;
+  background-color: #ffffff;
+  border: solid grey;
+  padding: 20px;
+}
+
+.title {
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.active-bg {
+  border-left-width: 30px !important;
+  background-color: rgb(227, 227, 227);
+}
+
+.activeNameTitle {
+  color: #ff0000;
+}

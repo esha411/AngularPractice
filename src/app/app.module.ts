@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ColorChangeDirective } from './color-change.directive';
+import { PipeandCompoComponent } from './pipeand-compo/pipeand-compo.component';
+import { TruncateTextPipe } from './truncate-text.pipe';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { ColorChangeDirective } from './color-change.directive';
     AppComponent,
     TaskListComponent,
     ColorChangeDirective,
+    PipeandCompoComponent,
+    TruncateTextPipe,
+    ChildComponent,
 
   ],
   imports: [

@@ -1,0 +1,14 @@
+<div class="child-container">
+  <div *ngIf="childDataSource; else noSelection">
+      <h2><b>{{childName}}</b></h2>
+      <p>{{childDataSource}}</p>
+  </div>
+
+  <ng-template #noSelection>
+      <p>Select a description to view it here.</p>
+  </ng-template>
+
+  <div class="btn-container">
+    <button class="save-btn" (click)="onSaveClick()"> Save </button>
+  </div>
+</div>

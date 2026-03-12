@@ -1,0 +1,34 @@
+.child-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.save-btn {
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #3f51b5;
+}

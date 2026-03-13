@@ -1,0 +1,32 @@
+.error {
+	color: #b91c1c;
+	margin: 6px 0;
+}
+
+.success {
+	color: #166534;
+	margin-top: 10px;
+}
+
+.popup-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.35);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+}
+
+.popup-card {
+	background: #fff;
+	padding: 16px;
+	border-radius: 8px;
+	max-width: 480px;
+	width: 100%;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.popup-card button {
+	margin-top: 12px;
+}

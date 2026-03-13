@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()" #flightForm="ngForm">
+    <label for="flightBookingWay">Flight type</label>
+    <select id="flightBookingWay" name="flightBookingWay" [(ngModel)]="tripType" required>
+        <option value="" disabled>Select one</option>
+        <option value="one-way">One Way</option>
+        <option value="return">Return flight</option>
+    </select>
+    <p class="error" *ngIf="hasSubmitted && flightForm.controls['flightBookingWay']?.invalid">
+        Please select a flight type.
+    </p>
+
+    <p>
+        <label for="departureDate">Departure date</label>
+        <input type="date" id="departureDate" name="departureDate" [(ngModel)]="departOn" [min]="today" required />
+    </p>
+    <p class="error" *ngIf="hasSubmitted && flightForm.controls['departureDate']?.errors?.['required']">
+        Departure date is required.
+    </p>
+    <p class="error" *ngIf="hasSubmitted && flightForm.controls['departureDate']?.errors?.['min']">
+        Departure date cannot be in the past.
+    </p>
+
+    <div *ngIf="tripType === 'return'">
+        <label for="returnDate">Return date</label>
+        <input type="date" id="returnDate" name="returnDate" [(ngModel)]="returnOn" [min]="minReturnDate" required />
+    </div>
+    <p class="error" *ngIf="hasSubmitted && tripType === 'return' && flightForm.controls['returnDate']?.errors?.['required']">
+        Return date is required.
+    </p>
+    <p class="error" *ngIf="hasSubmitted && tripType === 'return' && flightForm.controls['returnDate']?.errors?.['min']">
+        Return date cannot be before departure date.
+    </p>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div class="popup-backdrop" *ngIf="isPopupOpen">
+    <div class="popup-card" role="dialog">
+        <p class="success">{{ confirmationText }}</p>
+        <button type="button" (click)="closePopup()">Close</button>
+    </div>
+</div>

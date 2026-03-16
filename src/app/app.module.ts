@@ -11,6 +11,7 @@ import { PipeandCompoComponent } from './pipeand-compo/pipeand-compo.component';
 import { TruncateTextPipe } from './truncate-text.pipe';
 import { ChildComponent } from './child/child.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     TruncateTextPipe,
     ChildComponent,
     FlightBookingComponent,
+    RegisterComponent,
 
   ],
   imports: [

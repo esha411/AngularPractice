@@ -1,0 +1,64 @@
+<h2>Signup Form</h2>
+
+<form [formGroup]="signupForm">
+
+    <div>
+        <label>Username: </label>
+        <input formControlName="username" />
+    </div>
+        <div *ngIf="username?.touched && username?.hasError('required')">
+        Username is required and must be at least 3 characters long.
+        </div>
+    
+        <div *ngIf="username?.touched && username?.hasError('minlength')">
+        Username is required and must be at least 3 characters long.
+        </div>
+
+    <div>
+        <label>Email: </label>
+        <input formControlName="userEmail" />
+    </div>
+        <div *ngIf="userEmail?.touched && (userEmail?.hasError('required') || userEmail?.hasError('email'))">
+        Please enter a valid email address.
+        </div>
+
+    <div>
+        <label>Password: </label>
+        <input type="password" formControlName="userPassword" />
+    </div>
+    <div *ngIf="userPassword?.touched && (userPassword?.hasError('required') || userPassword?.hasError('minlength'))">
+         Password is required and must be at least 6 characters long.
+    </div>
+
+    <div>
+        <label>Confirm Password: </label>
+        <input type="password" formControlName="confirmPwd" />
+    </div>
+    <div *ngIf="confirmPwd?.touched && confirmPwd?.hasError('required')">
+        Password is required and must be at least 6 characters long.
+    </div>
+    <div *ngIf="confirmPwd?.touched && !confirmPwd?.hasError('required') && signupForm.hasError('passwordMismatch')">
+        Passwords do not match.
+    </div>
+
+    <div>
+        <label>Preferred Contact: </label>
+        <select formControlName="contactMethod" (change)="onContactChange()">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+        </select>
+    </div>
+
+    <div *ngIf="contactMethod?.value === 'phone'">
+        <label>Phone Number: </label>
+        <input type="tel" formControlName="phoneNum" />
+    </div>
+    <div *ngIf="contactMethod?.value === 'phone' && phoneNum?.touched && phoneNum?.hasError('required')">
+        Please provide at least one contact method.
+    </div>
+
+    <div>
+        <button type="button" [disabled]="signupForm.invalid" (click)="onSubmit()">Save</button>
+    </div>
+
+</form>

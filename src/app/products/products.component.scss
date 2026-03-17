@@ -1,0 +1,21 @@
+input {
+  margin: 4px;
+  padding: 5px;
+}
+
+button {
+  margin: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.error-box {
+  color: red;
+}

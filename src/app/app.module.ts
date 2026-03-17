@@ -12,6 +12,10 @@ import { TruncateTextPipe } from './truncate-text.pipe';
 import { ChildComponent } from './child/child.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { RegisterComponent } from './register/register.component';
+import { ProductsComponent } from './products/products.component';
+
+import { HttpClientModule } from '@angular/common/http';   
+       
 
 
 @NgModule({
@@ -24,13 +28,16 @@ import { RegisterComponent } from './register/register.component';
     ChildComponent,
     FlightBookingComponent,
     RegisterComponent,
+    ProductsComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

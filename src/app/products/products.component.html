@@ -1,0 +1,24 @@
+
+<h3>Product Catalog</h3>
+
+<h4>Add a Product</h4>
+<form [formGroup]="itemForm" (ngSubmit)="submitProduct()">
+  <input type="text"   formControlName="category"    placeholder="Category" />
+  <input type="text"   formControlName="title"       placeholder="Title" />
+  <input type="number" formControlName="price"       placeholder="Price" />
+  <input type="text"   formControlName="description" placeholder="Description" />
+  <button type="submit" [disabled]="itemForm.invalid">Add</button>
+</form>
+
+<h4>All Products</h4>
+<ul *ngIf="!loadError">
+  <li *ngFor="let item of productList" style="list-style-type: none">
+    <b>Title: </b>{{ item.title }} <br>
+    <b>Description: </b>{{ item.description }} <br>
+    <b>Category: </b>{{ item.category }} <br><br>
+  </li>
+</ul>
+
+<div *ngIf="loadError">
+  <p style="color: red;">{{ loadError }}</p>
+</div>

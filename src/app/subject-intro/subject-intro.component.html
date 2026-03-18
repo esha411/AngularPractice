@@ -1,0 +1,26 @@
+<div>
+  <input type="text" [formControl]="searchControl" placeholder="Search by name..." />
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Favourite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of filteredUsers">
+      <td>{{ u.id }}</td>
+      <td>{{ u.name }}</td>
+      <td>{{ u.email }}</td>
+      <td>
+        <button (click)="toggleFav(u)">
+          {{ isFav(u) ? 'Remove Fav' : 'Add Fav' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

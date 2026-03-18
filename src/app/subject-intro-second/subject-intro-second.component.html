@@ -1,0 +1,22 @@
+<h4>Favourite Users</h4>
+
+<p *ngIf="favouriteUsers.length === 0">No favourites yet.</p>
+
+<table *ngIf="favouriteUsers.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of favouriteUsers">
+      <td>{{ u.id }}</td>
+      <td>{{ u.name }}</td>
+      <td>{{ u.email }}</td>
+      <td><button (click)="removeFromFavs(u)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -14,7 +14,9 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
 import { RegisterComponent } from './register/register.component';
 import { ProductsComponent } from './products/products.component';
 
-import { HttpClientModule } from '@angular/common/http';   
+import { HttpClientModule } from '@angular/common/http';
+import { SubjectIntroComponent } from './subject-intro/subject-intro.component';
+import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intro-second.component';   
        
 
 
@@ -29,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     FlightBookingComponent,
     RegisterComponent,
     ProductsComponent,
+    SubjectIntroComponent,
+    SubjectIntroSecondComponent,
     
 
   ],

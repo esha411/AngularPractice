@@ -45,7 +45,7 @@ export class ProductsComponent implements OnInit {
     if (this.itemForm.valid) {
       this.productService.addProduct(this.itemForm.value).subscribe({
         next: (newProduct: any) => {
-          this.productList.unshift(newProduct); // add to top of list
+          this.productList.unshift(newProduct);
           this.itemForm.reset();
         },
         error: (err) => {
